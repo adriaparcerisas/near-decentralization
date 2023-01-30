@@ -108,7 +108,7 @@ st.altair_chart(alt.Chart(df, height=500, width=1200)
     .properties(title='Daily actions by type'))
 
 st.write('')
-st.write('')
+st.subheader(' ')
 # In[11]:
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',

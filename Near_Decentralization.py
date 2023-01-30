@@ -40,9 +40,8 @@ st.markdown('Token holders not interested in being a Validator can stake to a Va
 # In[4]:
 
 
-st.markdown('One of the main aspects to be aware about the blockchains that use proof of stake is the decentralization. **Decentralization** is by far one of the most important factors in a crypto ecosystem. As you probably already figured out, the validation system in place might fail to honor this by progressively moving towards a more traditional centralized environment. Why and how could this happen?') 
-st.write('- As it was briefly mentioned previously, validators are incentivized to hold more and more NEAR to guarantee a spot in the network for themselves.') 
-st.write('- Users look at the voting power (= total staked NEAR) of a validator as a good indicator of who to trust and delegate their funds to. This is understandable and that is why there is a need to constantly educate the user base and promote smaller validators.')
+st.markdown('One of the main aspects to be aware about the blockchains that use proof of stake is the decentralization. **Decentralization** is by far one of the most important factors in a crypto ecosystem. As you probably already figured out, the validation system in place might fail to honor this by progressively moving towards a more traditional centralized environment. Why and how could this happen? As it was briefly mentioned previously, validators are incentivized to hold more and more NEAR to guarantee a spot in the network for themselves.') 
+st.write('Users look at the voting power (= total staked NEAR) of a validator as a good indicator of who to trust and delegate their funds to. This is understandable and that is why there is a need to constantly educate the user base and promote smaller validators.')
 
 
 # In[30]:
@@ -59,8 +58,7 @@ st.markdown('The major of the aforementioned metrics can be computed to assess b
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1']
-label = "<p style='color:red; font-size:25px'>Choose a validator</p>"
-selected_option = st.selectbox(st.markdown(label), options)
+selected_option = st.selectbox(Choose a validator, options)
 st.write('You selected:', selected_option)
 st.markdown('_Please consider that it could take a while (up to 2 minute) to load all charts if you selected a different option._')
 #st.sidebar.selectbox('Choose a validator', options)

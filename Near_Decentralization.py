@@ -21,12 +21,13 @@ import matplotlib.ticker as ticker
 import numpy as np
 import altair as alt
 sdk = ShroomDK("7bfe27b2-e726-4d8d-b519-03abc6447728")
+st.set_page_config(page_title="Near Path to Decentralization", layout="wide",initial_sidebar_state="collapsed")
 
 
 # In[2]:
 
 
-st.title('NEAR Path to Decentralization)
+st.title('NEAR Path to Decentralization')
 
 
 # In[3]:

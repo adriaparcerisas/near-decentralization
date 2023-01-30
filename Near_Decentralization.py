@@ -58,7 +58,7 @@ st.markdown('The major of the aforementioned metrics can be computed to assess b
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1']
-selected_option = st.selectbox(Choose a validator, options)
+selected_option = st.selectbox(st.markdown('**Choose a validator**'), options)
 st.write('You selected:', selected_option)
 st.markdown('_Please consider that it could take a while (up to 2 minute) to load all charts if you selected a different option._')
 #st.sidebar.selectbox('Choose a validator', options)

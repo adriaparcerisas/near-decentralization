@@ -107,21 +107,13 @@ st.altair_chart(alt.Chart(df, width=1200)
     .properties(title='Daily actions by type'))
 
 st.write('')
-st.write('')
-st.write('')
-st.write('')
-st.write('')
-st.write('')
-st.write('')
-st.write('')
-st.write('')
-st.write('')
 
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1']
-selected_option = st.sidebar.selectbox('Choose a validator', options)
+selected_option = st.selectbox('Choose a validator', options)
+st.write('You selected:', selected_option)
 #st.sidebar.selectbox('Choose a validator', options)
 
 

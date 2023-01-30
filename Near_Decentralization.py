@@ -54,6 +54,17 @@ st.write('- Power distribution by validator ranks')
 st.write('- Most common staking actions currently and over time')
 st.write('- Evolution of Nakamoto coefficient')
 
+st.markdown('The major of the aforementioned metrics can be computed to assess both individual validators on NEAR, and validation as a whole. For this reason, in the textbox below you can choose which validator you can analize specifically or if you only want to see the analysis for the whole validators.')
+
+options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
+           'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
+           'Openshards','Everstake','Binancenode1']
+label = "<p style='color:red; font-size:25px'>Choose a validator</p>"
+selected_option = st.selectbox(label, options, format_func=lambda x: f"<p style='color:blue; font-size:20px'>{x}</p>")
+st.write('You selected:', selected_option)
+st.markdown('_Please consider that it could take a while (up to 2 minute) to load all charts if you selected a different option._'
+#st.sidebar.selectbox('Choose a validator', options)
+
 
 # In[6]:
 
@@ -107,14 +118,6 @@ st.altair_chart(alt.Chart(df, width=1200)
     .properties(title='Daily actions by type'))
 
 st.write('')
-
-         
-options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
-           'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
-           'Openshards','Everstake','Binancenode1']
-selected_option = st.selectbox('Choose a validator', options)
-st.write('You selected:', selected_option)
-#st.sidebar.selectbox('Choose a validator', options)
 
 
 if selected_option == 'Binancenode1':
@@ -918,7 +921,8 @@ results2 = compute(sql2)
 df2 = pd.DataFrame(results2.records)
 df2.info()
 
-
+st.write('')
+st.write('')
 base2=alt.Chart(df2).encode(x=alt.X('date:O'))
 line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(stakerss):Q'))
 line2=base2.mark_line(color='orange').encode(y='sum(unstakerss):Q')
@@ -940,7 +944,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=1200)
 st.altair_chart(alt.Chart(df2, height=500, width=1200)
     .mark_bar()
     .encode(x='date:O', y='net_stakers:Q',color=alt.Color('validator', scale=alt.Scale(scheme='dark2')))
-    .properties(title='Weekly net_stakers by validator'))
+    .properties(title='Weekly net_stakers by chosen validator'))
          
          
 
@@ -3131,7 +3135,8 @@ results2 = compute(sql2)
 df2 = pd.DataFrame(results2.records)      
          
          
-         
+st.write('')
+st.write('')
 base2=alt.Chart(df2).encode(x=alt.X('weeks:O', axis=alt.Axis(labelAngle=325)))
 line1=base2.mark_bar(color='blue').encode(y=alt.Y('sum(near_staked):Q', axis=alt.Axis(grid=True)))
 line2=base2.mark_bar(color='orange').encode(y='sum(near_unstaked):Q')
@@ -3153,7 +3158,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=1200)
 st.altair_chart(alt.Chart(df2, height=500, width=1200)
     .mark_bar()
     .encode(x='weeks:O', y='total_near_delegated:Q',color=alt.Color('validator', scale=alt.Scale(scheme='dark2')))
-    .properties(title='Weekly net NEAR staked by validator'))
+    .properties(title='Weekly net NEAR staked by chosen validator'))
          
          
 

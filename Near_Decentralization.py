@@ -86,14 +86,14 @@ def compute(a):
 results = compute(sql)
 df = pd.DataFrame(results.records)
 df.info()
-st.subheader('Main staking activity metrics over the past month')
+st.subheader('Main staking activity metrics over the past 3 months')
 st.markdown('In this first part, we can take a look at the local government metrics on Near, where it can be seen how the staking actions have been splitted across the protocol, the distribution of validators, the Nakamoto coefficient, as well as some other interesting metrics regarding validators.')
 
 
 # In[9]:
 
 
-st.altair_chart(alt.Chart(df, height=500, width=1000)
+st.altair_chart(alt.Chart(df, height=500, width=1200)
     .mark_bar()
     .encode(x='sum(actions)', y=alt.Y('method_name2',sort='-x'),color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Type of action by usage'))
@@ -102,12 +102,13 @@ st.altair_chart(alt.Chart(df, height=500, width=1000)
 # In[10]:
 
 
-st.altair_chart(alt.Chart(df, height=500, width=1000)
+st.altair_chart(alt.Chart(df, height=500, width=1200)
     .mark_bar()
     .encode(x='date:O', y='actions:Q',color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Daily actions by type'))
 
-
+st.write('')
+st.write('')
 # In[11]:
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
@@ -3166,7 +3167,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=1200)
 # In[41]:
 
 
-#st.subheader("Near ")
+#st.subheader("Near Nakamoto Coefficient over the past 3 months")
 st.markdown('To close this analysis, here it can be seen a representation of the current total NEAR staked by each validator as well as the evolution of the Nakamoto Coefficient.')
 st.markdown('**Nakamoto Coefficient** is one of the main interesting metrics to measure the decentralization of a blockchain, that represents how many validators are needed to accumulate more than 50% of the total current NEAR staked.')
 sql3='''

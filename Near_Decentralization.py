@@ -93,7 +93,7 @@ st.markdown('In this first part, we can take a look at the local government metr
 # In[9]:
 
 
-st.altair_chart(alt.Chart(df, height=500, width=500)
+st.altair_chart(alt.Chart(df, height=500, width=1000)
     .mark_bar()
     .encode(x='sum(actions)', y=alt.Y('method_name2',sort='-x'),color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Type of action by usage'))
@@ -102,7 +102,7 @@ st.altair_chart(alt.Chart(df, height=500, width=500)
 # In[10]:
 
 
-st.altair_chart(alt.Chart(df, height=500, width=500)
+st.altair_chart(alt.Chart(df, height=500, width=1000)
     .mark_bar()
     .encode(x='date:O', y='actions:Q',color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Daily actions by type'))
@@ -114,8 +114,9 @@ options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1'],
 selected_option = st.sidebar.selectbox('Choose a validator', options)
+st.sidebar.selectbox('Choose a validator', options)
 
-if selected_option == 'All':
+if selected_option == 'Binancenode1':
     sql2 = f"""
     with 
       t1 as (
@@ -150,6 +151,7 @@ if selected_option == 'All':
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
     join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    and t2.validator='binancenode1.poolv1.near'
     """
 elif selected_option == 'Figment':
     sql2 = f"""
@@ -907,11 +909,10 @@ else:
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
     join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
-    and t2.validator='binancenode1.poolv1.near'
     """
 
 
-
+st.write('')
 
 # In[12]:
 
@@ -926,13 +927,13 @@ df2.info()
 base2=alt.Chart(df2).encode(x=alt.X('date:O', axis=alt.Axis(labelAngle=325)))
 line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(stakerss):Q', axis=alt.Axis(grid=True)))
 line2=base2.mark_line(color='orange').encode(y='sum(unstakerss):Q')
-st.altair_chart((line1 + line2).properties(title='Weekly stakers vs unstakers over the past months',width=600))
+st.altair_chart((line1 + line2).properties(title='Weekly stakers vs unstakers over the past months',width=1200))
 
 
 # In[24]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=500)
+st.altair_chart(alt.Chart(df2, height=500, width=1200)
     .mark_bar(color='green')
     .encode(x='date:O', y='sum(net_stakers):Q')
     .properties(title='Weekly net stakers over the past months'))
@@ -941,7 +942,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=500)
 # In[16]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=500)
+st.altair_chart(alt.Chart(df2, height=500, width=1200)
     .mark_bar()
     .encode(x='date:O', y='net_stakers:Q',color=alt.Color('validator', scale=alt.Scale(scheme='dark2')))
     .properties(title='Weekly net_stakers by validator'))
@@ -949,7 +950,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=500)
          
 
          
-if selected_option == 'All':
+if selected_option == 'Binancenode1':
     sql2 = f"""
     WITH 
        transactions as (
@@ -1050,6 +1051,7 @@ if selected_option == 'All':
        from ranking1 x
        full outer join ranking2 y on x.weeks=y.weeks and x.validator=y.validator
        where x.weeks >=current_date-INTERVAL '3 MONTHS'
+       and x.validator='binancenode1.poolv1.near'
     """
 elif selected_option == 'Figment':
     sql2 = f"""
@@ -3127,12 +3129,7 @@ else:
        from ranking1 x
        full outer join ranking2 y on x.weeks=y.weeks and x.validator=y.validator
        where x.weeks >=current_date-INTERVAL '3 MONTHS'
-    and x.validator='binancenode1.poolv1.near'
     """
-
-
-
-
 
      
 results2 = compute(sql2)
@@ -3140,27 +3137,27 @@ df2 = pd.DataFrame(results2.records)
          
          
          
-base2=alt.Chart(df2).encode(x=alt.X('date:O', axis=alt.Axis(labelAngle=325)))
+base2=alt.Chart(df2).encode(x=alt.X('weeks:O', axis=alt.Axis(labelAngle=325)))
 line1=base2.mark_bar(color='blue').encode(y=alt.Y('sum(near_staked):Q', axis=alt.Axis(grid=True)))
 line2=base2.mark_bar(color='orange').encode(y='sum(near_unstaked):Q')
-st.altair_chart((line1 + line2).properties(title='Weekly NEAR staked vs unstaked over the past 3 months',width=600))
+st.altair_chart((line1 + line2).properties(title='Weekly NEAR staked vs unstaked over the past 3 months',width=1200))
 
 
 # In[24]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=500)
+st.altair_chart(alt.Chart(df2, height=500, width=1200)
     .mark_bar(color='green')
-    .encode(x='date:O', y='sum(total_near_delegated):Q')
+    .encode(x='weeks:O', y='sum(total_near_delegated):Q')
     .properties(title='Weekly net NEAR staked over the past 3 months'))
 
 
 # In[16]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=500)
+st.altair_chart(alt.Chart(df2, height=500, width=1200)
     .mark_bar()
-    .encode(x='date:O', y='total_near_delegated:Q',color=alt.Color('validator', scale=alt.Scale(scheme='dark2')))
+    .encode(x='weeks:O', y='total_near_delegated:Q',color=alt.Color('validator', scale=alt.Scale(scheme='dark2')))
     .properties(title='Weekly net NEAR staked by validator'))
          
          
@@ -3169,7 +3166,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=500)
 # In[41]:
 
 
-st.subheader("Near decentralization")
+#st.subheader("Near ")
 st.markdown('To close this analysis, here it can be seen a representation of the current total NEAR staked by each validator as well as the evolution of the Nakamoto Coefficient.')
 st.markdown('**Nakamoto Coefficient** is one of the main interesting metrics to measure the decentralization of a blockchain, that represents how many validators are needed to accumulate more than 50% of the total current NEAR staked.')
 sql3='''
@@ -3311,7 +3308,7 @@ df3 = pd.DataFrame(results3.records)
 # In[44]:
 
 
-st.altair_chart(alt.Chart(df3, height=500, width=600)
+st.altair_chart(alt.Chart(df3, height=500, width=1200)
     .mark_bar()
     .encode(x=alt.X('validator',sort='-y'), y=('cumulative_near_delegated'),color=alt.Color('cumulative_near_delegated'))
     .properties(title='Current NEAR delegated by validator'))
@@ -3398,7 +3395,7 @@ validator,
 count(case when total_staked <= threshold then 1 end) as nakamoto_coeff
 from stats3 a 
 join stats b 
-on a.weeks = b.weeks where a.weeks >=CURRENT_DATE-INTERVAL '3 MONTHS'
+on a.weeks = b.weeks where a.weeks >=CURRENT_DATE-INTERVAL '3 MONTHS' and a.weeks<current_date-1
 group by 1,2
 order by 1 asc
    )
@@ -3418,7 +3415,7 @@ df4 = pd.DataFrame(results4.records)
 # In[33]:
 
 
-st.altair_chart(alt.Chart(df4, height=500, width=500)
+st.altair_chart(alt.Chart(df4, height=500, width=1200)
     .mark_bar()
     .encode(x='weeks:N', y='nakamoto_coeff:Q',color=alt.Color('nakamoto_coeff'))
     .properties(title='Weekly Nakamoto Coefficient over the past 3 months'))
@@ -3435,10 +3432,12 @@ st.altair_chart(alt.Chart(df4, height=500, width=500)
 
 
 st.subheader('Conclusions')
-st.markdown('Following the Near Foundation Weekly Transparency Report and using Flipside Crypto and MetricsDAO data, I have been able to develop a tool that tracks Near activity in a more user-friendly and clean way.')
-st.markdown('The most interesting thing I have found is the way in which the activity takes place in NEAR. It seems that users tend to use the ecosystem more during specific hours. The peaks seems to be registered from 5:00PM to 8:00PM. The same pattern holds true for active users, transactions and gas used!')
-st.markdown('Furhtermore, the activity since to be increased during the last week in which users, transactions and gas used have been doubled!')
-st.write('')
+st.write('Overall, the major of the actions (more than 60%) are “deposit and stake” actions. Followed by unstake actions like “unstake” or “unstake_all”. However, the unstaking actions has increased over the past months.')
+st.write('The top 10 validators holdings reduced from almost 60% of total staked NEAR to around 55%.')
+st.write('The amount of NEAR staked increased over the past 3 months. However, the situation is not similar of the amount of active validators.')
+st.write('After these past 3 months, the Nakamoto coefficient continued at a level of 11. It is good because the amount of needed validators to halt the blockchain remains above 10, but it shows no improvements on the Near decentralization.')
+st.write('The amount of NEAR staked experimented an uptrend from around 52M of NEAR staked to 55M staked.')
+st.write('The amount of staking actions and the amount of delegators that this pools are capting decreased over the last months.')
 st.markdown('This app has been done by **_Adrià Parcerisas_**, a PhD Biomedical Engineer related to Machine Learning and Artificial intelligence technical projects for data analysis and research, as well as dive deep on-chain data analysis about cryptocurrency projects. You can find me on [Twitter](https://twitter.com/adriaparcerisas)')
 st.write('')
 st.markdown('The full sources used to develop this app can be found to the following link: [Github link](https://github.com/adriaparcerisas/Near-developer-activity)')

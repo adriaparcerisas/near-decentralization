@@ -60,7 +60,7 @@ options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1']
 label = "<p style='color:red; font-size:25px'>Choose a validator</p>"
-selected_option = st.selectbox(label, options, format_func=lambda x: f"<p style='color:blue; font-size:20px'>{x}</p>")
+selected_option = st.selectbox(st.markdown(label), options)
 st.write('You selected:', selected_option)
 st.markdown('_Please consider that it could take a while (up to 2 minute) to load all charts if you selected a different option._')
 #st.sidebar.selectbox('Choose a validator', options)

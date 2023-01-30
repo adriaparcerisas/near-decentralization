@@ -106,6 +106,8 @@ st.altair_chart(alt.Chart(df, width=1200)
     .mark_bar()
     .encode(x='date:O', y='actions:Q',color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Daily actions by type'))
+
+
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
@@ -910,6 +912,7 @@ else:
     """
 
 
+st.beta_container("")
 st.write('')
 
 # In[12]:

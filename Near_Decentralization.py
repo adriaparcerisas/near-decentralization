@@ -3136,8 +3136,8 @@ df2 = pd.DataFrame(results2.records)
 st.write('')
 st.write('')
 base2=alt.Chart(df2).encode(x=alt.X('weeks:O', axis=alt.Axis(labelAngle=325)))
-line1=base2.mark_bar(color='blue').encode(y=alt.Y('sum(near_staked):Q', axis=alt.Axis(grid=True)))
-line2=base2.mark_bar(color='orange').encode(y='sum(near_unstaked):Q')
+line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(near_staked):Q', axis=alt.Axis(grid=True)))
+line2=base2.mark_line(color='orange').encode(y='sum(near_unstaked):Q')
 st.altair_chart((line1 + line2).properties(title='Weekly NEAR staked vs unstaked over the past 3 months',width=1200))
 
 

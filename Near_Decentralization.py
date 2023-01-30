@@ -953,7 +953,7 @@ if selected_option == 'Binancenode1':
        transactions as (
        SELECT tx_hash
     FROM near.core.fact_actions_events_function_call
-      WHERE method_name IN ('deposit_and_stake')
+      WHERE method_name IN ('deposit_and_stake') and block_timestamp>=current_date-INTERVAL'3 MONTHS'
        ),
        stakes as (
     SELECT 

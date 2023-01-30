@@ -93,7 +93,7 @@ st.markdown('In this first part, we can take a look at the local government metr
 # In[9]:
 
 
-st.altair_chart(alt.Chart(df, height=500, width=1200)
+st.altair_chart(alt.Chart(df, width=1200)
     .mark_bar()
     .encode(x='sum(actions)', y=alt.Y('method_name2',sort='-x'),color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Type of action by usage'))
@@ -102,23 +102,17 @@ st.altair_chart(alt.Chart(df, height=500, width=1200)
 # In[10]:
 
 
-st.altair_chart(alt.Chart(df, height=500, width=1200)
+st.altair_chart(alt.Chart(df, width=1200)
     .mark_bar()
     .encode(x='date:O', y='actions:Q',color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Daily actions by type'))
-
-st.empty()
-st.empty()
-st.empty()
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1']
 selected_option = st.sidebar.selectbox('Choose a validator', options)
 #st.sidebar.selectbox('Choose a validator', options)
-st.empty()
-st.empty()
-st.empty()
+
 
 if selected_option == 'Binancenode1':
     sql2 = f"""
@@ -925,13 +919,8 @@ df2 = pd.DataFrame(results2.records)
 df2.info()
 
 
-# In[40]:
-st.empty()
-st.empty()
-st.empty()
-
 base2=alt.Chart(df2).encode(x=alt.X('date:O'))
-line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(stakerss):Q', axis=alt.Axis(grid=True)))
+line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(stakerss):Q'))
 line2=base2.mark_line(color='orange').encode(y='sum(unstakerss):Q')
 st.altair_chart((line1 + line2).properties(title='Weekly stakers vs unstakers over the past months',width=1200))
 

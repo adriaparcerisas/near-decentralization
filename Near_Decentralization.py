@@ -977,8 +977,7 @@ if selected_option == 'Binancenode1':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
-    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
     weekly as (
@@ -3075,7 +3074,7 @@ else:
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),

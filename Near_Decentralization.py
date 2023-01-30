@@ -110,14 +110,15 @@ st.altair_chart(alt.Chart(df, height=500, width=1200)
 st.empty()
 st.empty()
 st.empty()
-
-# In[11]:
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1']
 selected_option = st.sidebar.selectbox('Choose a validator', options)
 #st.sidebar.selectbox('Choose a validator', options)
+st.empty()
+st.empty()
+st.empty()
 
 if selected_option == 'Binancenode1':
     sql2 = f"""
@@ -925,9 +926,11 @@ df2.info()
 
 
 # In[40]:
+st.empty()
+st.empty()
+st.empty()
 
-
-base2=alt.Chart(df2).encode(x=alt.X('date:O', axis=alt.Axis(labelAngle=325)))
+base2=alt.Chart(df2).encode(x=alt.X('date:O'))
 line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(stakerss):Q', axis=alt.Axis(grid=True)))
 line2=base2.mark_line(color='orange').encode(y='sum(unstakerss):Q')
 st.altair_chart((line1 + line2).properties(title='Weekly stakers vs unstakers over the past months',width=1200))

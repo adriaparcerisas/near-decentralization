@@ -114,7 +114,7 @@ options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
            'Openshards','Everstake','Binancenode1'],
 selected_option = st.sidebar.selectbox('Choose a validator', options)
-st.sidebar.selectbox('Choose a validator', options)
+#st.sidebar.selectbox('Choose a validator', options)
 
 if selected_option == 'Binancenode1':
     sql2 = f"""

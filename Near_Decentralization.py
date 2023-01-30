@@ -113,7 +113,7 @@ st.subheader(' ')
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
            'Allnodes','Epic','Stader-Labs','Stakin','Atomic-nodes','Consensus Finoa 00','Staked','Consensus Finoa 01',
-           'Openshards','Everstake','Binancenode1'],
+           'Openshards','Everstake','Binancenode1']
 selected_option = st.sidebar.selectbox('Choose a validator', options)
 #st.sidebar.selectbox('Choose a validator', options)
 
@@ -3167,7 +3167,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=1200)
 # In[41]:
 
 
-#st.subheader("Near Nakamoto Coefficient over the past 3 months")
+st.subheader("Near Nakamoto Coefficient over the past 3 months")
 st.markdown('To close this analysis, here it can be seen a representation of the current total NEAR staked by each validator as well as the evolution of the Nakamoto Coefficient.')
 st.markdown('**Nakamoto Coefficient** is one of the main interesting metrics to measure the decentralization of a blockchain, that represents how many validators are needed to accumulate more than 50% of the total current NEAR staked.')
 sql3='''

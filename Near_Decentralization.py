@@ -152,7 +152,7 @@ if selected_option == 'Binancenode1':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='binancenode1.poolv1.near'
     """
 elif selected_option == 'Figment':
@@ -189,7 +189,7 @@ elif selected_option == 'Figment':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='figment.poolv1.near'
     """
 elif selected_option == 'Astro-Stakers':
@@ -226,7 +226,7 @@ elif selected_option == 'Astro-Stakers':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='astro-stakers.poolv1.near'
     """
          
@@ -264,7 +264,7 @@ elif selected_option == 'Near-Fans':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='near-fans.poolv1.near'
     """
 
@@ -302,7 +302,7 @@ elif selected_option == 'Blockdaemon':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='blockdaemon.poolv1.near'
     """
          
@@ -340,7 +340,7 @@ elif selected_option == 'Stake1':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='stake1.poolv1.near'
     """
          
@@ -378,7 +378,7 @@ elif selected_option == 'Zavodil':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='zavodil.poolv1.near'
     """
          
@@ -416,7 +416,7 @@ elif selected_option == 'Legends':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='legends.poolv1.near'
     """
          
@@ -454,7 +454,7 @@ elif selected_option == 'Meta-pool':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='meta-pool.near'
     """
 
@@ -492,7 +492,7 @@ elif selected_option == 'Hashquark':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='hashquark.poolv1.near'
     """
 
@@ -530,7 +530,7 @@ elif selected_option == 'Allnodes':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='allnodes.poolv1.near'
     """
 
@@ -568,7 +568,7 @@ elif selected_option == 'Epic':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='epic.poolv1.near'
     """
 
@@ -606,7 +606,7 @@ elif selected_option == 'Stader-labs':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='v2-nearx.stader-labs.near'
     """
 
@@ -644,7 +644,7 @@ elif selected_option == 'Stakin':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='stakin.poolv1.near'
     """
 
@@ -682,7 +682,7 @@ elif selected_option == 'Atomic-nodes':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='atomic-nodes.poolv1.near'
     """
 
@@ -720,7 +720,7 @@ elif selected_option == 'Consensus Finoa 00':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='consensus_finoa_00.poolv1.near'
     """
 
@@ -758,7 +758,7 @@ elif selected_option == 'Staked':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='staked.poolv1.near'
     """
 
@@ -796,7 +796,7 @@ elif selected_option == 'Consensus Finoa 01':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='consensus_finoa_01.poolv1.near'
     """
 
@@ -834,7 +834,7 @@ elif selected_option == 'Openshards':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='openshards.poolv1.near'
     """
 
@@ -872,7 +872,7 @@ elif selected_option == 'Everstake':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='everstake.poolv1.near'
     """
 
@@ -910,7 +910,7 @@ else:
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
     """
 
 # In[12]:
@@ -977,7 +977,7 @@ if selected_option == 'Binancenode1':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1081,7 +1081,7 @@ elif selected_option == 'Figment':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1185,7 +1185,7 @@ elif selected_option == 'Astro-Stakers':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1290,7 +1290,7 @@ elif selected_option == 'Near-Fans':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1395,7 +1395,7 @@ elif selected_option == 'Blockdaemon':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1500,7 +1500,7 @@ elif selected_option == 'Stake1':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1605,7 +1605,7 @@ elif selected_option == 'Zavodil':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1710,7 +1710,7 @@ elif selected_option == 'Legends':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1815,7 +1815,7 @@ elif selected_option == 'Meta-pool':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1920,7 +1920,7 @@ elif selected_option == 'Hashquark':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2025,7 +2025,7 @@ elif selected_option == 'Allnodes':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2130,7 +2130,7 @@ elif selected_option == 'Epic':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2235,7 +2235,7 @@ elif selected_option == 'Stader-labs':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2340,7 +2340,7 @@ elif selected_option == 'Stakin':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2445,7 +2445,7 @@ elif selected_option == 'Atomic-nodes':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2550,7 +2550,7 @@ elif selected_option == 'Consensus Finoa 00':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2655,7 +2655,7 @@ elif selected_option == 'Staked':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2760,7 +2760,7 @@ elif selected_option == 'Consensus Finoa 01':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2865,7 +2865,7 @@ elif selected_option == 'Openshards':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2970,7 +2970,7 @@ elif selected_option == 'Everstake':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -3075,7 +3075,7 @@ else:
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final,
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -3193,7 +3193,7 @@ sql3='''
    transactions as (
    SELECT tx_hash
 FROM near.core.fact_actions_events_function_call
-  WHERE method_name IN ('deposit_and_stake')
+  WHERE method_name IN ('deposit_and_stake') and block_timestamp>=current_date-INTERVAL '3 MONTHS'
    ),
    stakes as (
 SELECT 
@@ -3341,7 +3341,7 @@ sql4='''
    transactions as (
    SELECT tx_hash
 FROM near.core.fact_actions_events_function_call
-  WHERE method_name IN ('deposit_and_stake')
+  WHERE method_name IN ('deposit_and_stake') and block_timestamp>=current_date-INTERVAL '3 MONTHS'
    ),
    stakes as (
 SELECT 

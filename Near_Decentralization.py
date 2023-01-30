@@ -92,7 +92,6 @@ st.markdown('In this first part, we can take a look at the local government metr
 
 # In[9]:
 
-
 st.altair_chart(alt.Chart(df, width=1200)
     .mark_bar()
     .encode(x='sum(actions)', y=alt.Y('method_name2',sort='-x'),color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
@@ -107,6 +106,16 @@ st.altair_chart(alt.Chart(df, width=1200)
     .encode(x='date:O', y='actions:Q',color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Daily actions by type'))
 
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
 
          
 options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1','Zavodil','Legends','Meta-pool','Hashquark',
@@ -910,10 +919,6 @@ else:
     from t2
     join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%'
     """
-
-
-st.beta_container("")
-st.write('')
 
 # In[12]:
 

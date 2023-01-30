@@ -977,7 +977,7 @@ if selected_option == 'Binancenode1':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1081,7 +1081,7 @@ elif selected_option == 'Figment':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1185,7 +1185,7 @@ elif selected_option == 'Astro-Stakers':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1290,7 +1290,7 @@ elif selected_option == 'Near-Fans':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1395,7 +1395,7 @@ elif selected_option == 'Blockdaemon':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1500,7 +1500,7 @@ elif selected_option == 'Stake1':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1605,7 +1605,7 @@ elif selected_option == 'Zavodil':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1710,7 +1710,7 @@ elif selected_option == 'Legends':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1815,7 +1815,7 @@ elif selected_option == 'Meta-pool':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -1920,7 +1920,7 @@ elif selected_option == 'Hashquark':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2025,7 +2025,7 @@ elif selected_option == 'Allnodes':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2130,7 +2130,7 @@ elif selected_option == 'Epic':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2235,7 +2235,7 @@ elif selected_option == 'Stader-labs':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2340,7 +2340,7 @@ elif selected_option == 'Stakin':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2445,7 +2445,7 @@ elif selected_option == 'Atomic-nodes':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2550,7 +2550,7 @@ elif selected_option == 'Consensus Finoa 00':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2655,7 +2655,7 @@ elif selected_option == 'Staked':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2760,7 +2760,7 @@ elif selected_option == 'Consensus Finoa 01':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2865,7 +2865,7 @@ elif selected_option == 'Openshards':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),
@@ -2970,7 +2970,7 @@ elif selected_option == 'Everstake':
       tx_receiver as validator, 
       tx_signer as delegator,
       tx:receipt[0]:outcome:logs[0] as col,
-      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, if final <> '' then final/pow(10,18) else 0 end as near_unstaked
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8) as final, case when final <> '' then final/pow(10,18) else 0 end as near_unstaked
     FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
       and tx_hash in (select * from transactions2)
     ),

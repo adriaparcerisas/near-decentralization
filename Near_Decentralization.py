@@ -976,9 +976,10 @@ if selected_option == 'Binancenode1':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1079,9 +1080,10 @@ elif selected_option == 'Figment':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1182,9 +1184,10 @@ elif selected_option == 'Astro-Stakers':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1286,9 +1289,10 @@ elif selected_option == 'Near-Fans':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1390,9 +1394,10 @@ elif selected_option == 'Blockdaemon':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1494,9 +1499,10 @@ elif selected_option == 'Stake1':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1598,9 +1604,10 @@ elif selected_option == 'Zavodil':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1702,9 +1709,10 @@ elif selected_option == 'Legends':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1806,9 +1814,10 @@ elif selected_option == 'Meta-pool':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -1910,9 +1919,10 @@ elif selected_option == 'Hashquark':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2014,9 +2024,10 @@ elif selected_option == 'Allnodes':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2118,9 +2129,10 @@ elif selected_option == 'Epic':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2222,9 +2234,10 @@ elif selected_option == 'Stader-labs':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2326,9 +2339,10 @@ elif selected_option == 'Stakin':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2430,9 +2444,10 @@ elif selected_option == 'Atomic-nodes':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2534,9 +2549,10 @@ elif selected_option == 'Consensus Finoa 00':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2638,9 +2654,10 @@ elif selected_option == 'Staked':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2742,9 +2759,10 @@ elif selected_option == 'Consensus Finoa 01':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2846,9 +2864,10 @@ elif selected_option == 'Openshards':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -2950,9 +2969,10 @@ elif selected_option == 'Everstake':
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 
@@ -3054,9 +3074,10 @@ else:
       tx_hash as tx,
       tx_receiver as validator, 
       tx_signer as delegator,
-      tx:actions[0]:FunctionCall:deposit/pow(10,24) near_unstaked
-    FROM near.core.fact_transactions
-      WHERE tx_hash in (select * from transactions2)
+      tx:receipt[0]:outcome:logs[0] as col,
+      substring(col, CHARINDEX('Withdraw', col) + 8, CHARINDEX('NEAR', col) - CHARINDEX('Withdraw', col) - 8)/pow(10,18) as near_unstaked
+    FROM near.core.fact_transactions where tx:receipt[0]:outcome:logs[0] like 'Withdraw%'
+      and tx_hash in (select * from transactions2)
     ),
     weekly as (
        SELECT 

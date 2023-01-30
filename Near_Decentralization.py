@@ -152,7 +152,7 @@ if selected_option == 'Binancenode1':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='binancenode1.poolv1.near'
     """
 elif selected_option == 'Figment':
@@ -189,7 +189,7 @@ elif selected_option == 'Figment':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='figment.poolv1.near'
     """
 elif selected_option == 'Astro-Stakers':
@@ -226,7 +226,7 @@ elif selected_option == 'Astro-Stakers':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='astro-stakers.poolv1.near'
     """
          
@@ -264,7 +264,7 @@ elif selected_option == 'Near-Fans':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='near-fans.poolv1.near'
     """
 
@@ -302,7 +302,7 @@ elif selected_option == 'Blockdaemon':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='blockdaemon.poolv1.near'
     """
          
@@ -340,7 +340,7 @@ elif selected_option == 'Stake1':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='stake1.poolv1.near'
     """
          
@@ -378,7 +378,7 @@ elif selected_option == 'Zavodil':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='zavodil.poolv1.near'
     """
          
@@ -416,7 +416,7 @@ elif selected_option == 'Legends':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='legends.poolv1.near'
     """
          
@@ -454,7 +454,7 @@ elif selected_option == 'Meta-pool':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='meta-pool.near'
     """
 
@@ -492,7 +492,7 @@ elif selected_option == 'Hashquark':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='hashquark.poolv1.near'
     """
 
@@ -530,7 +530,7 @@ elif selected_option == 'Allnodes':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='allnodes.poolv1.near'
     """
 
@@ -568,7 +568,7 @@ elif selected_option == 'Epic':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='epic.poolv1.near'
     """
 
@@ -606,7 +606,7 @@ elif selected_option == 'Stader-labs':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='v2-nearx.stader-labs.near'
     """
 
@@ -644,7 +644,7 @@ elif selected_option == 'Stakin':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='stakin.poolv1.near'
     """
 
@@ -682,7 +682,7 @@ elif selected_option == 'Atomic-nodes':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='atomic-nodes.poolv1.near'
     """
 
@@ -720,7 +720,7 @@ elif selected_option == 'Consensus Finoa 00':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='consensus_finoa_00.poolv1.near'
     """
 
@@ -758,7 +758,7 @@ elif selected_option == 'Staked':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='staked.poolv1.near'
     """
 
@@ -796,7 +796,7 @@ elif selected_option == 'Consensus Finoa 01':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='consensus_finoa_01.poolv1.near'
     """
 
@@ -834,7 +834,7 @@ elif selected_option == 'Openshards':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='openshards.poolv1.near'
     """
 
@@ -872,7 +872,7 @@ elif selected_option == 'Everstake':
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     and t2.validator='everstake.poolv1.near'
     """
 
@@ -910,7 +910,7 @@ else:
     ifnull(t2.validator,t3.validator) as validator,
     ifnull(stakers,0) as stakerss, ifnull(unstakers*(-1),0) as unstakerss,stakerss+unstakerss as net_stakers
     from t2
-    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and date>=current_date-INTERVAL '3 MONTHS'
+    join t3 on t2.date=t3.date and t2.validator=t3.validator where t2.validator not like '%lockup%' and t2.date>=current_date-INTERVAL '3 MONTHS'
     """
 
 # In[12]:

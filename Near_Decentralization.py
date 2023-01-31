@@ -59,7 +59,6 @@ options = ['All', 'Figment', 'Astro-Stakers','Near-Fans','Blockdaemon','Stake1',
            'Openshards','Everstake','Binancenode1']
 selected_option = st.selectbox('Choose a validator', options)
 st.write('You selected:', selected_option)
-st.markdown('_Please consider that it could take a while (up to 2 minute) to load all charts if you selected a different option._')
 #st.sidebar.selectbox('Choose a validator', options)
 
 

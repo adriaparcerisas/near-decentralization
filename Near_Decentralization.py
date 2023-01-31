@@ -100,7 +100,7 @@ st.markdown('In this first part, we can take a look at the local government metr
 
 # In[9]:
 
-st.altair_chart(alt.Chart(df, width=1200)
+st.altair_chart(alt.Chart(df, width=600)
     .mark_bar()
     .encode(x='sum(actions)', y=alt.Y('method_name2',sort='-x'),color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Type of action by usage'))
@@ -109,7 +109,7 @@ st.altair_chart(alt.Chart(df, width=1200)
 # In[10]:
 
 
-st.altair_chart(alt.Chart(df, width=1200)
+st.altair_chart(alt.Chart(df, width=600)
     .mark_bar()
     .encode(x='date:O', y='actions:Q',color=alt.Color('method_name2', scale=alt.Scale(scheme='dark2')))
     .properties(title='Daily actions by type'))
@@ -923,13 +923,13 @@ st.write('')
 base2=alt.Chart(df2).encode(x=alt.X('date:O'))
 line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(stakerss):Q'))
 line2=base2.mark_line(color='orange').encode(y='sum(unstakerss):Q')
-st.altair_chart((line1 + line2).properties(title='Weekly stakers vs unstakers over the past months',width=1200))
+st.altair_chart((line1 + line2).properties(title='Weekly stakers vs unstakers over the past months',width=600))
 
 
 # In[24]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=1200)
+st.altair_chart(alt.Chart(df2, height=500, width=600)
     .mark_bar(color='green')
     .encode(x='date:O', y='sum(net_stakers):Q')
     .properties(title='Weekly net stakers over the past months'))
@@ -938,7 +938,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=1200)
 # In[16]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=1200)
+st.altair_chart(alt.Chart(df2, height=500, width=600)
     .mark_bar()
     .encode(x='date:O', y='net_stakers:Q',color=alt.Color('validator', scale=alt.Scale(scheme='dark2')))
     .properties(title='Weekly net_stakers by chosen validator'))
@@ -3157,13 +3157,13 @@ st.write('')
 base2=alt.Chart(df2).encode(x=alt.X('weeks:O', axis=alt.Axis(labelAngle=325)))
 line1=base2.mark_line(color='blue').encode(y=alt.Y('sum(near_staked):Q', axis=alt.Axis(grid=True)))
 line2=base2.mark_line(color='orange').encode(y='sum(near_unstaked):Q')
-st.altair_chart((line1 + line2).properties(title='Weekly NEAR staked vs unstaked over the past 3 months',width=1200))
+st.altair_chart((line1 + line2).properties(title='Weekly NEAR staked vs unstaked over the past 3 months',width=600))
 
 
 # In[24]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=1200)
+st.altair_chart(alt.Chart(df2, height=500, width=600)
     .mark_bar(color='green')
     .encode(x='weeks:O', y='sum(total_near_delegated):Q')
     .properties(title='Weekly net NEAR staked over the past 3 months'))
@@ -3172,7 +3172,7 @@ st.altair_chart(alt.Chart(df2, height=500, width=1200)
 # In[16]:
 
 
-st.altair_chart(alt.Chart(df2, height=500, width=1200)
+st.altair_chart(alt.Chart(df2, height=500, width=600)
     .mark_bar()
     .encode(x='weeks:O', y='total_near_delegated:Q',color=alt.Color('validator', scale=alt.Scale(scheme='dark2')))
     .properties(title='Weekly net NEAR staked by chosen validator'))
@@ -3325,7 +3325,7 @@ df3 = pd.DataFrame(results3.records)
 # In[44]:
 
 
-st.altair_chart(alt.Chart(df3, height=500, width=1200)
+st.altair_chart(alt.Chart(df3, height=500, width=600)
     .mark_bar()
     .encode(x=alt.X('validator',sort='-y'), y=('cumulative_near_delegated'),color=alt.Color('cumulative_near_delegated'))
     .properties(title='Current NEAR delegated by validator'))
@@ -3432,7 +3432,7 @@ df4 = pd.DataFrame(results4.records)
 # In[33]:
 
 
-st.altair_chart(alt.Chart(df4, height=500, width=1200)
+st.altair_chart(alt.Chart(df4, height=500, width=600)
     .mark_bar()
     .encode(x='weeks:N', y='nakamoto_coeff:Q',color=alt.Color('nakamoto_coeff'))
     .properties(title='Weekly Nakamoto Coefficient over the past 3 months'))

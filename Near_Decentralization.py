@@ -3192,7 +3192,7 @@ sql3='''
    transactions as (
    SELECT tx_hash
 FROM near.core.fact_actions_events_function_call
-  WHERE method_name IN ('deposit_and_stake') and block_timestamp>=current_date-INTERVAL '3 MONTHS'
+  WHERE method_name IN ('deposit_and_stake')
    ),
    stakes as (
 SELECT 
@@ -3340,7 +3340,7 @@ sql4='''
    transactions as (
    SELECT tx_hash
 FROM near.core.fact_actions_events_function_call
-  WHERE method_name IN ('deposit_and_stake') and block_timestamp>=current_date-INTERVAL '3 MONTHS'
+  WHERE method_name IN ('deposit_and_stake')
    ),
    stakes as (
 SELECT 
